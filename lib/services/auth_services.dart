@@ -119,4 +119,16 @@ class AuthService {
       showSnackBar(context, e.toString());
     }
   }
+
+  void signOut(BuildContext context) async {
+    final navigator = Navigator.of(context);
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    prefs.setString('x-auth-token', '');
+
+    navigator.pushNamedAndRemoveUntil(
+      '/log-in',
+      (route) => false,
+    );
+  }
 }
