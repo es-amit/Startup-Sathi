@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:startup_sathi/providers/user_provider.dart';
+import 'package:startup_sathi/screens/co_founder.dart';
 import 'package:startup_sathi/screens/home_screen.dart';
 import 'package:startup_sathi/screens/login_screen.dart';
 import 'package:startup_sathi/screens/signup_screen.dart';
+import 'package:startup_sathi/screens/startup_screen.dart';
 import 'package:startup_sathi/services/auth_services.dart';
 import 'package:startup_sathi/theme/theme.dart';
 import 'package:provider/provider.dart';
@@ -47,6 +49,8 @@ class _MyAppState extends State<MyApp> {
         '/log-in': (context) => const LoginScreen(),
         '/sign-up': (context) => const SignUpScreen(),
         '/home': (context) => const HomeScreen(),
+        '/cofounder': (context) => const CoFounderScreen(),
+        '/startup': (context) => const StartUpScreen(),
       },
     );
   }

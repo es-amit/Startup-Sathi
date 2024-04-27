@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:startup_sathi/providers/user_provider.dart';
 import 'package:startup_sathi/services/auth_services.dart';
 import 'package:startup_sathi/widgets/gradient_button.dart';
 
@@ -13,21 +11,39 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<UserProvider>(context).user;
-
     return Scaffold(
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () => signOutUser(context),
+            icon: const Icon(
+              Icons.login,
+            ),
+          )
+        ],
+      ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(user.email),
-            Text(user.name),
             const SizedBox(
               height: 20,
             ),
             AuthGradientButton(
-              buttonText: "Sign out",
-              onPressed: () => signOutUser(context),
-            )
+              buttonText: "Looking For StartUp",
+              onPressed: () {
+                Navigator.of(context).pushNamed('/startup');
+              },
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            AuthGradientButton(
+              buttonText: "Looking For Co-Founder",
+              onPressed: () {
+                Navigator.of(context).pushNamed('/cofounder');
+              },
+            ),
           ],
         ),
       ),

@@ -21,5 +21,24 @@ class AppTheme {
       focusedBorder: _border(AppPallete.gradient2),
       errorBorder: _border(AppPallete.errorColor),
     ),
+    dataTableTheme: const DataTableThemeData(
+      dataRowMinHeight: 70,
+      dataRowMaxHeight: 100,
+      dividerThickness: 3,
+      headingRowHeight: 50,
+      columnSpacing: 20,
+      horizontalMargin: 20,
+      dataRowColor: MaterialStatePropertyAll(
+        AppPallete.borderColor,
+      ),
+      dataTextStyle: TextStyle(
+        fontSize: 15,
+        fontWeight: FontWeight.w500,
+      ),
+      headingTextStyle: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
   );
 }
